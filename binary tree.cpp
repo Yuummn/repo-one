@@ -9,8 +9,21 @@ struct nod
     char data;
     struct nod *right;
 };
-  return n;
+typedef struct nod NOD;
+typedef NOD POKOK;
+NOD *NodBaru(char item)
+{
+    NOD *n;
+    n = (NOD *)malloc(sizeof(NOD));
 
+    if(n != Nil)
+    {
+        n -> data = item;
+        n -> left = Nil;
+        n -> right = Nil;
+    }
+    return n;
+}
 void BinaPokok (POKOK **T)
 {
     *T = Nil;
@@ -81,7 +94,6 @@ int main()
     postOrder(nama);
     cout<<endl;
 
-
     BinaPokok(&pohon);
     TambahNod(&pohon, buah = 'R');
     TambahNod(&pohon -> left, buah = 'E');
@@ -106,4 +118,3 @@ int main()
     return 0;
     getch();
 }
-
